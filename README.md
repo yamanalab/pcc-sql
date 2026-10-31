@@ -105,7 +105,4 @@ BIRD-CU will be added later.
 
 Code (`src/`, `eval/`, `benchmark/`) is released under the [MIT License](LICENSE).
 
-`data/dev.json` is derived from Spider 1.0 (Yu et al., 2018) and is
-distributed under CC BY-SA 4.0, the same license as Spider. This
-repository does not redistribute the Spider SQLite databases;
-`setup_spider.sh` fetches them from the official release.
+`data/dev.json` is derived from Spider 1.0 (Yu et al., 2018) and released under CC BY-SA 4.0.
