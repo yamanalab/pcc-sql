@@ -40,10 +40,6 @@ pcc-sql/
 └── setup_spider_acl.sh    # fetch and convert Spider-ACL into data_spider_acl/
 ```
 
-Spider-ACL ([Klisura et al., 2026](https://github.com/klisura-code/LLM-Access-Control-Datasets))
-is not redistributed here; `setup_spider_acl.sh` converts its GRANT policies
-into Public / Hidden labels.
-
 ## Installation
 
 ```bash
