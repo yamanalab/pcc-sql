@@ -1,0 +1,23 @@
+[project]
+name = "pcc-sql"
+version = "1.0.0"
+description = "PCC-SQL: policy-conditioned constrained decoding for Text-to-SQL, with the Spider-CU benchmark"
+requires-python = ">=3.11"
+dependencies = [
+    "tqdm",
+    "sqlglot",
+    "torch==2.10.0",
+    "transformers==5.2.0",
+    "accelerate",
+]
+
+[project.optional-dependencies]
+claude = ["anthropic"]
+dev = ["pytest", "ruff"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
