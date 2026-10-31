@@ -24,15 +24,25 @@ AACL-IJCNLP 2026
 
 ## Repository Layout
 
-- `data/dev.json` — the Spider-CU benchmark used in the paper.
-- `src/` — the PCC-SQL decoder (`src/constrained/`) and SQL checks.
-- `eval/` — the evaluation pipeline, scorer, and baselines (`eval/baselines.py`).
-- `benchmark/` — the pipeline that built `data/dev.json` from Spider.
-- `setup_spider.sh` — fetches Spider 1.0 into `spider_data/`; the evaluator
-  reads schema metadata and the SQLite DBs (for execution checks) from there.
-- `setup_spider_acl.sh` — fetches Spider-ACL ([Klisura et al., 2026](https://github.com/klisura-code/LLM-Access-Control-Datasets))
-  and converts its GRANT policies into Public / Hidden labels in
-  `data_spider_acl/`. The converted data is not redistributed here.
+```
+pcc-sql/
+├── data/dev.json          # Spider-CU benchmark
+├── src/
+│   ├── constrained/       # PCC-SQL decoder
+│   └── sqlchecks.py       # policy / syntax checks
+├── eval/
+│   ├── run_eval.py        # entry point
+│   ├── baselines.py       # direct / retry / 2-step verifier
+│   ├── prompt.py
+│   └── scorer.py
+├── benchmark/             # Spider-CU construction pipeline + Spider-ACL converter
+├── setup_spider.sh        # fetch Spider 1.0 into spider_data/
+└── setup_spider_acl.sh    # fetch and convert Spider-ACL into data_spider_acl/
+```
+
+Spider-ACL ([Klisura et al., 2026](https://github.com/klisura-code/LLM-Access-Control-Datasets))
+is not redistributed here; `setup_spider_acl.sh` converts its GRANT policies
+into Public / Hidden labels.
 
 ## Installation
 
